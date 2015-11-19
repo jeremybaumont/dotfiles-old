@@ -14,8 +14,10 @@ if [ -d ~/.bashrc.d ]; then
 	for f in `ls -1 ~/.bashrc.d/.bash*`;do source  $f; done
 fi
 
-### PATH
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
+
+# set Boxen environment variables
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
