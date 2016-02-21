@@ -219,11 +219,11 @@ let g:SuperTabMappingBackward = '<s-tab>'
 set paste
 
 " tmuxline
-let g:tmuxline_preset = 'tmux'
-let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '>',
-    \ 'right' : '',
-    \ 'right_alt' : '<',
-    \ 'space' : ' '}
-let g:tmuxline_theme = 'icebert'
+"let g:tmuxline_preset = 'tmux'
+"let g:tmuxline_separators = {
+"    \ 'left' : '',
+"    \ 'left_alt': '>',
+"   \ 'right' : '',
+"    \ 'right_alt' : '<',
+"    \ 'space' : ' '}
+"let g:tmuxline_theme = 'icebert'
