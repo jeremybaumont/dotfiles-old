@@ -143,7 +143,8 @@ set nu
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 " colorscheme  
-colorscheme  pychimp 
+colorscheme papercolor 
+set background=light
 
 " Json
 augroup json_autocmd 
@@ -255,3 +256,7 @@ set showmatch
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
+set tabstop=4
+" enable Terraform syntax highlighting
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1

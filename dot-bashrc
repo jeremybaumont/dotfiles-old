@@ -4,24 +4,31 @@
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth:erasedups
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-if [ -d ~/.bashrc.d ]; then
-	for f in `ls -1 ~/.bashrc.d/.bash*`;do source  $f; done
-fi
 
-if [ -d ~/.bashrc-work.d ]; then
-	for f in `ls -1 ~/.bashrc-work.d/.bash*`;do source  $f; done
-fi
+# set Boxen environment variables
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+# added by travis gem
+[ -f /Users/jbaumont/.travis/travis.sh ] && source /Users/jbaumont/.travis/travis.sh
+#if [ -d ~/.bashrc.d ]; then
+#	for f in `ls -1 ~/.bashrc.d/.bash*`;do .  $f; done
+#fi
+
+#if [ -d ~/.bashrc-work.d ]; then
+#	for f in `ls -1 ~/.bashrc-work.d/.bash*`;do .  $f; done
+#fi
+
+#if [ -f ~/.bash_secrets ]; then
+#	. ~/.bash_secrets 
+#fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
-
-# set Boxen environment variables
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
